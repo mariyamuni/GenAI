@@ -1,0 +1,40 @@
+REQUEST
+==========================================
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "Extract the below given DOM : 
+
+<input type=\"text\" class=\"inputBox\" name=\"companyName\" size=\"30\" maxlength=\"100\" id=\"createLeadForm_companyName\">
+<input type=\"text\" class=\"inputBox\" name=\"lastName\" size=\"30\" maxlength=\"100\" id=\"createLeadForm_lastName\">
+<input type=\"text\" class=\"inputBox\" name=\"firstName\" size=\"30\" maxlength=\"100\" id=\"createLeadForm_firstName\">
+<input type=\"submit\" class=\"smallSubmit\" name=\"submitButton\" value=\"Create Lead\" id=\"ext-gen630\"> and provide me the Playwright Typescript code. Instructions: Do not use ID if the value has number in it. Provide only java code and no explanations needed"
+    }
+  ],
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "temperature": 0.1
+}
+
+RESPONSE
+==========================================
+Here is the extracted DOM:
+
+* Input field for Company Name
+* Input field for Last Name
+* Input field for First Name
+* Submit button
+
+And here is the Playwright Typescript code:
+
+```typescript
+import { test, expect } from '@playwright/test';
+
+test('Create Lead Form', async ({ page }) => {
+  await page.goto('your-url'); // replace with your url
+
+  await page.fill('input[name="companyName"]', 'Test Company');
+  await page.fill('input[name="lastName"]', 'Test Last Name');
+  await page.fill('input[name="firstName"]', 'Test First Name');
+  await page.click('input[type="submit"]');
+});

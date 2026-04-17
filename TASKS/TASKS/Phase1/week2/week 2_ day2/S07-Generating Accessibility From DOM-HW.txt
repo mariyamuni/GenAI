@@ -1,0 +1,82 @@
+REQUEST
+==========================================
+id: chatcmpl-9696608b-e5a7-424d-a203-54da85152a94
+object: chat.completion
+created: 1771535148
+model: meta-llama/llama-4-scout-17b-16e-instruct
+
+choices:
+- index: 0
+  role: assistant
+  content: WCAG audit findings (raw)
+
+usage:
+  prompt_tokens: 524
+  completion_tokens: 663
+  total_tokens: 1187
+  system_fingerprint: fp_37da608fc1
+  service_tier: on_demand
+
+------------------------------------------
+
+RESPONSE (Beautified WCAG Summary)
+==========================================
+
+WCAG Level A
+------------
+
+1.1.1 Non-text Content
+Observation: The image does not have a text alternative.
+Compliance Status: Non-Compliant
+Evidence: http://leaftaps.com/opentaps_images/opentaps_logo.png
+
+1.3.1 Info and Relationships
+Observation: Content structure is not logical; headings are inconsistent.
+Compliance Status: Non-Compliant
+Evidence: Heading "Leaftaps Login" followed by StaticText "Leaftaps Login"
+
+1.3.2 Meaningful Sequence
+Observation: Reading order may confuse screen reader users.
+Compliance Status: Potential Risk
+Evidence: StaticText "Welcome to Leaftaps Application..." unrelated to login flow
+
+2.1.1 Keyboard Navigation
+Observation: Focusable elements do not show clear focus indication.
+Compliance Status: Potential Risk
+Evidence: Username textbox, Password textbox, Login button
+
+2.4.2 Page Titled
+Observation: Page lacks a descriptive title.
+Compliance Status: Non-Compliant
+Evidence: No title element found
+
+WCAG Level AA
+--------------
+
+1.4.3 Contrast (Minimum)
+Observation: Color contrast cannot be evaluated.
+Compliance Status: Potential Risk
+Evidence: No color information available
+
+2.4.6 Headings and Labels
+Observation: Labels are not programmatically associated with fields.
+Compliance Status: Non-Compliant
+Evidence: LabelText/StaticText not linked to inputs
+
+WCAG Level AAA
+---------------
+
+1.4.6 Identify and Disable
+Observation: No information about disabling animations or dynamic content.
+Compliance Status: Potential Risk
+Evidence: No information available
+
+2.4.9 Link Purpose
+Observation: No links present.
+Compliance Status: Compliant
+Evidence: No links found
+
+3.2.6 On Input
+Observation: No information about content changes triggered by input.
+Compliance Status: Potential Risk
+Evidence: No information available
